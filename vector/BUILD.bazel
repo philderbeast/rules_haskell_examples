@@ -25,4 +25,5 @@ haskell_library(
         ":semigroups",
     ],
     visibility = ["//visibility:public"],
+    exports = {},
 )
