@@ -5,10 +5,11 @@ local_repository(
     path = "tutorial",
 )
 
+RULES_HASKELL_VERSION = "ea52da0835a1ce28a8d7c141dcb7e3ef936fa54b"
 http_archive(
     name = "io_tweag_rules_haskell",
-    strip_prefix = "rules_haskell-0.6",
-    urls = ["https://github.com/tweag/rules_haskell/archive/v0.6.tar.gz"],
+    strip_prefix = "rules_haskell-{}".format(RULES_HASKELL_VERSION),
+    urls = ["https://github.com/tweag/rules_haskell/archive/{}.tar.gz".format(RULES_HASKELL_VERSION)],
 )
 
 load("@io_tweag_rules_haskell//haskell:repositories.bzl", "haskell_repositories")
