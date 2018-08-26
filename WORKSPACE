@@ -5,7 +5,7 @@ local_repository(
     path = "tutorial",
 )
 
-RULES_HASKELL_VERSION = "ea52da0835a1ce28a8d7c141dcb7e3ef936fa54b"
+RULES_HASKELL_VERSION = "18a37091a23806ad3dd42867b3ec62b9b4b4eaea"
 http_archive(
     name = "io_tweag_rules_haskell",
     strip_prefix = "rules_haskell-{}".format(RULES_HASKELL_VERSION),
@@ -47,21 +47,5 @@ nixpkgs_package(
   """,
     repository = "@nixpkgs",
 )
-
-http_archive(
-    name = "io_bazel_rules_sass",
-    strip_prefix = "rules_sass-0.0.3",
-    urls = ["https://github.com/bazelbuild/rules_sass/archive/0.0.3.tar.gz"],
-)
-load("@io_bazel_rules_sass//sass:sass.bzl", "sass_repositories")
-sass_repositories()
-
-http_archive(
-    name = "io_bazel_skydoc",
-    strip_prefix = "skydoc-b374449408e759e32e010fa6a20585fe9fabd523",
-    urls = ["https://github.com/mrkkrp/skydoc/archive/b374449408e759e32e010fa6a20585fe9fabd523.tar.gz"],
-)
-load("@io_bazel_skydoc//skylark:skylark.bzl", "skydoc_repositories")
-skydoc_repositories()
 
 register_toolchains("//:ghc")
