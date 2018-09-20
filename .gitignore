@@ -1,1 +1,4 @@
 /bazel-*
+.stack*
+__build
+dist-newstyle
